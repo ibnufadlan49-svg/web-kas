@@ -1,6 +1,6 @@
 const spreadsheetCsvUrls = {
   rekap:
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSALsZoecQhWvFYbqFFy_zgq0CEB9Oglcq0UltbaxGtn6hatcX706LXF7HqxQrtx0K0Cm1DP4jUFe56/pub?output=csv",
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vT2tWaJ8CNvOCD6CqeyP07YV7MyVyD-QhDtw_cmkrzEBSSlvABZZQtSSPBdJtsoVjYmZmK11K7Lw1fJ/pub?gid=311741769&single=true&output=csv",
   nunggak: "TEMPEL_URL_CSV_TAB_TUNGGAK_DI_SINI",
 };
 
