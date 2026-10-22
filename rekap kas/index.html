@@ -3,48 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rekap Kas</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#f4f8ff" />
+    <title>Rekap Kas | Ringkasan</title>
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <h1>Kas 1IKRA</h1>
+    <header>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">R</div>
+        <div>
+          <p class="brand-name">Rekap Kas</p>
+          <p class="brand-caption">Ringkasan Keuangan 1IKRA</p>
+        </div>
+      </div>
+    </header>
     <div id="mode-toggle">
       <label for="mode-switch">Mode Gelap</label>
       <input type="checkbox" id="mode-switch" />
     </div>
     <div id="navbar">
-      <a href="main.html">Ringkasan</a
-      ><a href="index.html" aria-current="page">Rekap kas</a>
+      <a href="index.html" aria-current="page">Ringkasan</a>
+      <a href="main.html">Rekap Kas</a>
       <a href="nunggak.html">Tukang Nunggak</a>
     </div>
-    <section>
-      <div id="card">
-        <h2>Rekap Kas</h2>
-        <p>Berikut adalah rekap kas 1IKRA:</p>
-        <div
-          class="table-scroll table-scroll--wide"
-          role="region"
-          aria-label="Tabel rekap kas"
-          tabindex="0"
-        >
-          <table>
-            <thead>
-              <tr>
-                <th>Tanggal</th>
-                <th>Keterangan</th>
-                <th>Pemasukan</th>
-                <th>Pengeluaran</th>
-                <th>Saldo</th>
-              </tr>
-            </thead>
-            <tbody id="rekap-table-body">
-              <!-- Data akan diisi melalui JavaScript -->
-            </tbody>
-          </table>
+    <main>
+      <section aria-labelledby="summary-title">
+        <div class="page-heading">
+          <p class="eyebrow">Dashboard keuangan</p>
+          <h1 id="summary-title">Ringkasan kas</h1>
+          <p>Pantau pemasukan, pengeluaran, dan saldo kas saat ini.</p>
         </div>
-      </div>
-    </section>
-    <script src="app.js" defer></script>
+        <div class="summary-grid">
+          <article class="summary-card">
+            <div class="card-topline">
+              <p class="card-label">Total pemasukan</p>
+              <span class="card-icon" aria-hidden="true">↗</span>
+            </div>
+            <h2 id="total-pemasukan">-</h2>
+            <p class="card-note">Akumulasi pemasukan saat ini</p>
+          </article>
+          <article class="summary-card">
+            <div class="card-topline">
+              <p class="card-label">Total pengeluaran</p>
+              <span class="card-icon" aria-hidden="true">↙</span>
+            </div>
+            <h2 id="total-pengeluaran">-</h2>
+            <p class="card-note">Akumulasi pengeluaran saat ini</p>
+          </article>
+          <article class="summary-card balance">
+            <div class="card-topline">
+              <p class="card-label">Saldo saat ini</p>
+              <span class="card-icon" aria-hidden="true">Rp</span>
+            </div>
+            <h2 id="saldo">-</h2>
+            <p class="card-note">Sisa kas setelah pengeluaran</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="main.js" defer></script>
     <script src="theme.js" defer></script>
   </body>
 </html>
