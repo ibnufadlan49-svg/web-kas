@@ -1,5 +1,5 @@
 const SPREADSHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vT2tWaJ8CNvOCD6CqeyP07YV7MyVyD-QhDtw_cmkrzEBSSlvABZZQtSSPBdJtsoVjYmZmK11K7Lw1fJ/pub?gid=123456789&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3wjaCRLQKJilPP9gEDeXlRUIxLXt4h9376paAQz2JNFDedGbYyWdOvEIVlZHNBbsNpLzSydaM4EIz/pub?output=csv";
 
 function parseCsv(csvText) {
   const rows = [];
