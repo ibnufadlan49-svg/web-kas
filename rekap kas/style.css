@@ -11,6 +11,9 @@
   --blue-soft: #eaf3ff;
   --border: #e8eef7;
   --shadow: 0 18px 50px rgba(37, 85, 145, 0.09);
+  --table-head: #f3f7fd;
+  --table-row-alt: #f8faff;
+  --table-row-hover: #eef5ff;
 }
 
 :root[data-theme="dark"] {
@@ -24,6 +27,9 @@
   --blue-soft: #1c3150;
   --border: #24364f;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  --table-head: #1a2a41;
+  --table-row-alt: #15243a;
+  --table-row-hover: #1c3150;
 }
 
 * {
@@ -382,5 +388,156 @@ td {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+body > h1,
+body > section {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+}
+
+body > h1 {
+  margin-bottom: 28px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+section {
+  color: var(--text);
+}
+
+#card {
+  overflow: hidden;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+#card h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(21px, 3vw, 26px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+#card > p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.table-scroll {
+  overflow: auto;
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  scrollbar-color: var(--border) transparent;
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid rgba(40, 120, 229, 0.35);
+  outline-offset: 3px;
+}
+
+.table-scroll table {
+  width: 100%;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.table-scroll--wide table {
+  min-width: 720px;
+  table-layout: fixed;
+}
+
+.table-scroll--wide th:first-child,
+.table-scroll--wide td:first-child {
+  width: 15%;
+}
+
+.table-scroll--wide th:nth-child(2),
+.table-scroll--wide td:nth-child(2) {
+  width: 37%;
+}
+
+.table-scroll--wide th:nth-child(n + 3),
+.table-scroll--wide td:nth-child(n + 3) {
+  width: 16%;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 15px 18px;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-scroll th {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background: var(--table-head);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.table-scroll th:nth-child(n + 3) {
+  text-align: right;
+}
+
+.table-scroll tbody tr {
+  background: var(--surface);
+  transition: background-color 140ms ease;
+}
+
+.table-scroll tbody tr:nth-child(even) {
+  background: var(--table-row-alt);
+}
+
+.table-scroll tbody tr:hover {
+  background: var(--table-row-hover);
+}
+
+.table-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table-scroll tbody td {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  body > h1 {
+    margin-bottom: 24px;
+  }
+
+  #card {
+    padding: 20px 16px;
+  }
+
+  .table-scroll {
+    margin-top: 20px;
+  }
+
+  .table-scroll th,
+  .table-scroll td {
+    padding: 13px 14px;
   }
 }
