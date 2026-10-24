@@ -102,6 +102,7 @@ header {
   height: 46px;
   flex: 0 0 46px;
   object-fit: contain;
+  border-radius: 50px;
 }
 
 .brand-name {
