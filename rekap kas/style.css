@@ -96,6 +96,14 @@ header {
   font-weight: 800;
 }
 
+.brand-logo {
+  display: block;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  object-fit: contain;
+}
+
 .brand-name {
   font-family: "Manrope", sans-serif;
   font-size: 17px;
